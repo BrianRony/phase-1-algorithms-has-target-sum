@@ -18,6 +18,9 @@ function hasTargetSum(array, target) {
 /* 
   Add your pseudocode here
   Iterate through our array
+  for each number get a comlimentary number but subtracting it from the target
+  look is there is a number equal to the compliment 
+  if present return true
 
 */
 
