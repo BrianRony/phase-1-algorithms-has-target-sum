@@ -1,17 +1,28 @@
-function hasTargetSum(array, target) {
- for(let i = 0;i<array.length; i++){
-  const num = target - array[i]
-    for(let j=i+1;j<array.length;j++){
-      if((array[j] === num)){
-          return true
-      }
+function hasTargetSum(array,target){
+  const seenNum= {}
+
+  for(let num of array){
+    const complement = target - num;
+    if(complement in seenNum) return true
+    seenNum[num] = true;
     }
- }
- return false
+return false
 }
+// function hasTargetSum(array, target) {
+//  for(let i = 0;i<array.length; i++){
+//   const num = target - array[i]
+//     for(let j=i+1;j<array.length;j++){
+//       if((array[j] === num)){
+//           return true
+//       }
+//     }
+//  }
+//  return false
+// }
 
 /* 
   Write the Big O time complexity of your function here
+  O(n)
   O(n^2)
 */
 
@@ -20,7 +31,7 @@ function hasTargetSum(array, target) {
   Iterate through our array
   for each number get a comlimentary number but subtracting it from the target
   look is there is a number equal to the compliment 
-  if present return true
+  if present return
 
 */
 
